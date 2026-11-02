@@ -1,11 +1,15 @@
 package be.guho.eventbookingapi.domain;
 
+import java.time.LocalDate;
+
 public class Booking {
 
     private Long id;
     private Long eventId;
     private Long userId;
     private Integer numberOfSeats;
+    private LocalDate createdAt;
+    private BookingStatus status;
 
     public Long getId() {
         return id;
@@ -37,5 +41,33 @@ public class Booking {
 
     public void setNumberOfSeats(Integer numberOfSeats) {
         this.numberOfSeats = numberOfSeats;
+    }
+
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public BookingStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(BookingStatus status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "id=" + id +
+                ", eventId=" + eventId +
+                ", userId=" + userId +
+                ", numberOfSeats=" + numberOfSeats +
+                ", createdAt=" + createdAt +
+                ", status=" + status +
+                '}';
     }
 }

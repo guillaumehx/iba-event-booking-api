@@ -7,8 +7,7 @@ public class User {
     private Long id;
     private String firstname;
     private String lastname;
-    private LocalDate birthdate;
-    private String address;
+    private String email;
 
     public Long getId() {
         return id;
@@ -34,20 +33,12 @@ public class User {
         this.lastname = lastname;
     }
 
-    public LocalDate getBirthdate() {
-        return birthdate;
+    public String getEmail() {
+        return email;
     }
 
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -56,8 +47,7 @@ public class User {
                 "id=" + id +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", birthdate=" + birthdate +
-                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
