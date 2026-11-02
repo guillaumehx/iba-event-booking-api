@@ -4,9 +4,18 @@ import java.time.LocalDate;
 
 public class Event {
 
+    private Long id;
     private String name;
     private LocalDate date;
     private Integer capacity;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -35,7 +44,8 @@ public class Event {
     @Override
     public String toString() {
         return "Event{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", date=" + date +
                 ", capacity=" + capacity +
                 '}';
