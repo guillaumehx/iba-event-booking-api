@@ -1,0 +1,11 @@
+id,name,starts_at,capacity
+evt-01,Kotlin Conf Afterparty,2027-03-12T19:00:00Z,200
+evt-02,"Jazz, Blues & Soul Night",2027-02-05T20:30:00Z,80
+evt-03,Intro to Rust Workshop,2027-01-20T09:00:00Z,12
+evt-04,Café Concert: Édith Piaf Tribute,2027-04-02T20:00:00Z,40
+evt-05,Product Management Talk,2025-11-14T18:00:00Z,100
+evt-06,Open-Air Cinema,2027-06-21T21:30:00Z,300
+evt-07,Startup Pitch Night,2027-02-18T18:30:00Z,60
+evt-08,Kubernetes Deep Dive,2027-05-10T08:30:00Z,25
+evt-09,Symphony Orchestra: Beethoven 9,2027-03-27T19:30:00Z,150
+evt-10,Pottery for Beginners,2027-01-09T14:00:00Z,6
