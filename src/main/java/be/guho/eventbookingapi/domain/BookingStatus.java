@@ -1,4 +1,6 @@
 package be.guho.eventbookingapi.domain;
 
-public class BookingStatus {
+public enum BookingStatus {
+    CONFIRMED,
+    CANCELLED
 }
