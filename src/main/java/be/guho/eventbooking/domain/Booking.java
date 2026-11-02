@@ -1,4 +1,4 @@
-package be.guho.eventbookingapi.domain;
+package be.guho.eventbooking.domain;
 
 import java.time.LocalDate;
 

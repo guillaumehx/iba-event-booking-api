@@ -1,13 +1,13 @@
-package be.guho.eventbookingapi;
+package be.guho.eventbooking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EventBookingApiApplication {
+public class EventBookingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EventBookingApiApplication.class, args);
+        SpringApplication.run(EventBookingApplication.class, args);
     }
 
 }

@@ -1,6 +1,4 @@
-package be.guho.eventbookingapi.domain;
-
-import java.time.LocalDate;
+package be.guho.eventbooking.domain;
 
 public class User {
 
