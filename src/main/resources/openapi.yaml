@@ -1,0 +1,159 @@
+openapi: 3.0.3
+info:
+  title: Event Booking API
+  version: 1.0.0
+paths:
+  /api/events:
+    post:
+      summary: Create a new event
+      operationId: createEvent
+      tags:
+        - Events
+      parameters:
+        - name: X-User-Id
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEventRequest'
+      responses:
+        '201':
+          description: Event created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventResponse'
+    get:
+      summary: List all events
+      operationId: getEvents
+      tags:
+        - Events
+      responses:
+        '200':
+          description: List of events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EventResponse'
+
+  /api/bookings:
+    post:
+      summary: Book seats for an event
+      operationId: bookSeats
+      tags:
+        - Bookings
+      parameters:
+        - name: X-User-Id
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBookingRequest'
+      responses:
+        '201':
+          description: Booking created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingResponse'
+    get:
+      summary: List user bookings
+      operationId: getUserBookings
+      tags:
+        - Bookings
+      parameters:
+        - name: X-User-Id
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of bookings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BookingResponse'
+
+components:
+  schemas:
+    CreateEventRequest:
+      type: object
+      required:
+        - name
+        - date
+        - capacity
+      properties:
+        name:
+          type: string
+          minLength: 1
+        date:
+          type: string
+          format: date-time
+        capacity:
+          type: integer
+          minimum: 1
+
+    CreateBookingRequest:
+      type: object
+      required:
+        - eventId
+        - seats
+      properties:
+        eventId:
+          type: string
+        seats:
+          type: integer
+          minimum: 1
+
+    EventResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        date:
+          type: string
+          format: date-time
+        capacity:
+          type: integer
+        bookedSeats:
+          type: integer
+
+    BookingResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        eventId:
+          type: string
+        userId:
+          type: string
+        seats:
+          type: integer
+        status:
+          $ref: '#/components/schemas/BookingStatus'
+        createdAt:
+          type: string
+          format: date-time
+
+    BookingStatus:
+        type: string
+        enum:
+          - CONFIRMED
+          - CANCELLED
