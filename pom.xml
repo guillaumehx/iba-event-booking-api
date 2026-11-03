@@ -9,7 +9,7 @@
     </parent>
     <groupId>be.guho</groupId>
     <artifactId>event-booking-api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>event-booking-api</name>
     <description>event-booking-api</description>
     <properties>
