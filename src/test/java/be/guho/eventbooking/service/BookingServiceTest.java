@@ -26,8 +26,8 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class BookingServiceTest {
 
-    private static final String USER_ID = "usr-01";
-    private static final String EVENT_ID = "evt-01";
+    private static final String USER_ID = "usr-tst";
+    private static final String EVENT_ID = "evt-tst";
 
     @Mock
     private EventRepository eventRepository;
@@ -85,7 +85,7 @@ class BookingServiceTest {
 
         assertThatThrownBy(() -> bookingService.bookSeats(USER_ID, new CreateBookingRequest(EVENT_ID, 3)))
                 .isInstanceOf(NotEnoughSeatException.class)
-                .hasMessage("Not enough seats available for event with id 'evt-01' and capacity '10'");
+                .hasMessage("Not enough seats available for event with id 'evt-tst' and capacity '10'");
 
         verify(event, never()).setBookedSeats(any(Integer.class));
         verify(eventRepository, never()).save(any());
@@ -98,7 +98,7 @@ class BookingServiceTest {
 
         assertThatThrownBy(() -> bookingService.bookSeats(USER_ID, new CreateBookingRequest(EVENT_ID, 3)))
                 .isInstanceOf(EventNotFoundException.class)
-                .hasMessage("Event not found with id 'evt-01'");
+                .hasMessage("Event not found with id 'evt-tst'");
 
         verifyNoInteractions(bookingRepository);
     }
