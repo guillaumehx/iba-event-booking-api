@@ -24,4 +24,9 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     public ProblemDetail handleConstraintViolation(ConstraintViolationException e) {
         return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, e.getMessage());
     }
+
+    @ExceptionHandler(EventDateNotInFutureException.class)
+    public ProblemDetail handleEventDateNotInFuture(EventDateNotInFutureException e) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
 }
